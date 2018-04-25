@@ -67,7 +67,9 @@ If you or your partner are found to have plagiarized any part of the assignment,
 
 For our final program you are going to create a library that reads in a file with a list a cities and the roads between the cities. The driver code will input a starting city and destination city, and you will return the shortest path between the two as a vector of cities along the path. Then we are going to test our path finding algorithm with a heap and without a heap.
 
-Because this is a pair programming assignment, one of your team member will have to create the repo and team name. The other team member will join, and select the team name as their team.
+:warning: Because this is a pair programming assignment, one of you will have to create the repo and team name. The other team member will join and select the team name as their team.
+
+:no_entry_sign: __It is difficult to fix if you don't pay attention. Do not select the wrong team. Do not create multiple teams.__
 
 ## Part A: Making a Graph
 
