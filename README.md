@@ -23,24 +23,30 @@
 ```
 
 ### Grading Rubric
-__Total: 65 points__
+__Total: 70 points__
 * __Part A__
-    * Test 1: 3 point
+    * Test 1: 3 points
+        * Read file a list of Cities and their locations
     * Test 2: 5 points
+        * Test Adjacencies
 * __Part B__
     * Test 3-5: 5 points each
+        * Simple Shortest Path
+        * Less Simple Shortest Path
+        * Shortest Path between a single point
     * Test 6-8: 6 points each
+        * Shortest Path on Map 2
+        * Another Shortest Path on Map 2
+        * No Path
     * Test 9: 4 point
+        * Distance of no path is -1
     * Test 10-12: 5 points each
+        * Distance from a single city (should be 0)
+        * Distance between two cities
+        * Distance with two equal paths
 * __Part C__
-    * Test 1  [1 pt]
-        * Interface is correct and initializes a sorter object
-    * Test 2  [3 pts]
-        * Heapsort works as expected
-    * Test 3  [3 pts]
-        * mergesort works as expected
-    * Test 4 [3 pt]
-        * quicksort works as expected
+    * Test 14: 10 points
+        * Heap Performance
 * __Part D__
     * If memory error, memory leak, no 'checkmem' target [-5 points]
     * Does not follow requested project structure, makefile, and submission format [-3 points]
@@ -61,7 +67,7 @@ If you or your partner are found to have plagiarized any part of the assignment,
 
 For our final program you are going to create a library that reads in a file with a list a cities and the roads between the cities. Then we are going to test our path finding algorithm with different sorting algorithms. The driver code will input a starting city and destination city, and you will return the shortest path between the two as a vector of cities along the path.
 
-## Part A: Setting up the Tournament
+## Part A: Making a Graph
 
 For Part A you will read in a text containing cities and their x and y coordinates along a grid.
 The file format will be as follows:
@@ -134,6 +140,8 @@ You should add a method, 'getNextCity', that will iterate through the cities to 
     * makefile
         * You must have ‘checkmem’ and ‘run’ targets
         * Your makefile must include c++11 or c++14 extensions
+
+To submit, you only need to submit to your single group repo.
 
 Below is just a reminder of the commands you should use to submit your code. If you cannot remember the exact process, please review lab 1.
 
