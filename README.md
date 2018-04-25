@@ -1,6 +1,6 @@
 #### CS 240 - Spring 2018
 # Program 3 - Driving Directions
-## Due Date: 5:00 p.m., May 10th, 2018
+## Due Date: 11:59 p.m., May 10th, 2018
 
 *All programs will be tested on the machines in the Q22 lab. If your code does not run on the system in this lab, it is considered non-functioning EVEN IF IT RUNS ON YOUR PERSONAL COMPUTER. Always check that your code runs on the lab machines before submitting.*
 
@@ -17,7 +17,7 @@
         * make run
         * make checkmem
         * make clean
-    * Sample Output (with our test case):
+    * Sample Output:
 ```shell
     TBD
 ```
@@ -65,12 +65,11 @@ If you or your partner are found to have plagiarized any part of the assignment,
 
 ***
 
-For our final program you are going to create a library that reads in a file with a list a cities and the roads between the cities. Then we are going to test our path finding algorithm with different sorting algorithms. The driver code will input a starting city and destination city, and you will return the shortest path between the two as a vector of cities along the path.
+For our final program you are going to create a library that reads in a file with a list a cities and the roads between the cities. The driver code will input a starting city and destination city, and you will return the shortest path between the two as a vector of cities along the path. Then we are going to test our path finding algorithm with a heap and without a heap.
 
 ## Part A: Making a Graph
 
-For Part A you will read in a text containing cities and their x and y coordinates along a grid.
-The file format will be as follows:
+For Part A you will read in a text containing cities and their x and y coordinates along a grid. The file format will be as follows:
 
 ```
         mogadishu 6 7
@@ -100,6 +99,7 @@ You should use an array or vector to store the cities. To hold edges you will ne
          * Returns an adjacency list for the city
     * `bool operator<(City &c)`
          * Compares cities by name using the string operator< method
+
 ### Map
 * Public Methods
     * `Map(string filename)`
@@ -115,19 +115,20 @@ You will need to implement Dijkstra’s shortest path algorithm to determine the
 
 You should add the following public method to your Map class:
 * `vector<City *> shortestPath(City * start, City * dest)`
-    * The method should return the shortest path between two cities by returning a list of the cities you will need to travel through.
+    * The method should return the shortest path between two cities by returning a list of the cities you will need to travel through in order.
 
 
-You will also need a second    * `City(string cityName, int xCoor, int yCoor)` method that gives the distance between two points on the graph:
+You will also need a second method that gives the distance between two cities on the graph:
 * `unsigned int pathDistance(City * start, City * dest)`
     * The method should return the total distance (based on the path you must take) between the two cities.
     * The method should return -1 if there is no path.
 
 ## Part C: Optimizing Dijkstra's Algorithm
 
-Part of the complexity of Dijkstra's algorithm comes from finding the next closest, unvisited vertex. Typically, you can increase the speed of Dijkstra's shortest path algorithm by storing the data in a simple priority queue, such as a heap. We will store our cities in a heap to make accessing the closest city a constant time operation (_well, O(logn) if you count the time to re-heapify_). Add an additional Map constructor that takes a boolean as a second parameter in addition to the filename.
+Part of the complexity of Dijkstra's algorithm comes from finding the next closest, unvisited vertex. Typically, you can increase the speed of Dijkstra's shortest path algorithm by storing the data in a simple priority queue, such as a heap. We will optionally store our cities in a heap to make accessing the closest city a constant time operation (_well, O(logn) if you count the time to re-heapify_). Add an additional Map constructor that takes a boolean as a second parameter in addition to the filename.
 * `Map(string filename, bool heap)`
-You should add a method, 'getNextCity', that will iterate through the cities to find the next city if a heap is not used and will heapify your list of cities and return the priority value if a heap is used.
+
+I recommend adding a method, 'getNextCity', that will iterate through the cities to find the next closest city if a heap is not used, otherwise will heapify your list of cities and return the priority value if a heap is used.
 
 :warning: Remember to account for the `visited` flag when heapifying.
 
@@ -136,7 +137,6 @@ You should add a method, 'getNextCity', that will iterate through the cities to 
     * program3.cpp
     * Map.h/.cpp
     * City.h/.cpp
-    * Sorter.h/.cpp
     * makefile
         * You must have ‘checkmem’ and ‘run’ targets
         * Your makefile must include c++11 or c++14 extensions
