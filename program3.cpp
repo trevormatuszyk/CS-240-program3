@@ -192,22 +192,22 @@ int main(int argc, char *argv[]){
 	Map mapHeap("townlist2.txt", true);
 
 	path = {"gotham", "smallville", "metropolis", "kun-lun", "genosha", "asgard", "madripoor"};
-	cerr << "\tBeginning No Heap profile time") << endl
-	struct timeval start, stop;
-	gettimeofday(&start, NULL);
+	cerr << "\tBeginning No Heap profile time" << endl;
+	struct timeval start_t, stop_t;
+	gettimeofday(&start_t, NULL);
 	checkPath(mapNoHeap, path, "gotham", "madripoor");
-	gettimeofday(&stop, NULL);
-	time_t start_time = (start.tv_sec* 1000000) + start.tv_usec;
-	time_t stop_time = (stop.tv_sec* 1000000) + stop.tv_usec;
+	gettimeofday(&stop_t, NULL);
+	time_t start_time = (start_t.tv_sec* 1000000) + start_t.tv_usec;
+	time_t stop_time = (stop_t.tv_sec* 1000000) + stop_t.tv_usec;
 	float profile_time = stop_time - start_time;
 	printf("\tCompleted No Heap profile time = %lf\n", profile_time);
 
 	printf("\tBeginning Heap profile time");
-	gettimeofday(&start, NULL);
+	gettimeofday(&start_t, NULL);
 	checkPath(mapHeap, path, "gotham", "madripoor");
-	gettimeofday(&stop, NULL);
-	start_time = (start.tv_sec* 1000000) + start.tv_usec;
-	stop_time = (stop.tv_sec* 1000000) + stop.tv_usec;
+	gettimeofday(&stop_t, NULL);
+	start_time = (start_t.tv_sec* 1000000) + start_t.tv_usec;
+	stop_time = (stop_t.tv_sec* 1000000) + stop_t.tv_usec;
 	profile_time = stop_time - (float)start_time;
 	printf("\tCompleted Heap profile time = %lf\n", profile_time);
 
