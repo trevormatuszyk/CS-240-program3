@@ -1,6 +1,6 @@
 #### CS 240 - Spring 2018
 # Program 3 - Driving Directions
-## Due Date: 11:59 p.m., May 10th, 2018
+## Due Date: 11:59 p.m., May 11th, 2018
 
 *All programs will be tested on the machines in the Q22 lab. If your code does not run on the system in this lab, it is considered non-functioning EVEN IF IT RUNS ON YOUR PERSONAL COMPUTER. Always check that your code runs on the lab machines before submitting.*
 
