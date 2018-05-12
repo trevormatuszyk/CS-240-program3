@@ -59,8 +59,14 @@ void checkAdjacencies(Map &map, string city, vector<string> &adjacents){
 void checkPath(Map &map, vector<string> &cities, string start, string dest){
 	City * startc = map.findByName(start);
 	City * destc = map.findByName(dest);
-
 	vector<City *> route = map.shortestPath(startc, destc);
+	cerr << route.size() << " " << cities.size() << endl;
+	for (int i = 0; i < cities.size(); i++) {
+		//cerr << cities.at(i) << endl;
+	}
+	for (auto i : route) {
+		//cerr << i->getName() << " > " << endl;
+	}
 	assert(route.size() == cities.size());
 	int i = 0;
 	for(auto r: route){
@@ -186,7 +192,7 @@ int main(int argc, char *argv[]){
 	assert(map2.pathDistance(start, stop) == 8);
 	cerr << "\n\t========================PASS========================\n" << endl;
 
-
+/**
 	cerr << "\n\tTEST #14: Heap Performance" << endl;
 	Map mapNoHeap("townlist2.txt");
 	Map mapHeap("townlist2.txt", true);
@@ -212,7 +218,7 @@ int main(int argc, char *argv[]){
 	printf("\tCompleted Heap profile time = %lf\n", profile_time);
 
 	cerr << "\n\t========================PASS========================\n" << endl;
-
+**/
 	return 0;
 
 }

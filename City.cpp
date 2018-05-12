@@ -19,10 +19,28 @@ City::City(string cityName, int xCoor, int yCoor) {
   this->south = nullptr;
   this->east = nullptr;
   this->west = nullptr;
+  this->visited = NULL;
+  this->distance = 10000000;
+}
+
+void City::setDistance(int val) {
+  this->distance = val;
+}
+
+int City::getDistance() {
+  return this->distance;
 }
 
 string City::getName() {
   return this->cityName;
+}
+
+void City::setVisited(bool val) {
+  this->visited = val;
+}
+
+bool City::getVisited() {
+  return this->visited;
 }
 
 int City::getXCoor() {
